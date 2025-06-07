@@ -1,0 +1,10 @@
+name: ICDM-RCWK
+services:
+  app:
+    container_name: RCWK
+    build:
+      context: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./new_data:/app/new_data
