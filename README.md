@@ -27,7 +27,7 @@ Rcwk/
 Make sure Docker and Docker Compose are installed on your machine. Then run:
 
 ```bash
-git clone https://github.com/MLDS-AF/Rcwk.git
+git clone https://github.com/Submission-Account-code/Cwk-means.git
 cd Rcwk
 docker-compose up --build
 ```
@@ -78,24 +78,16 @@ mat_tfidf  # your preprocessed feature matrix
 k = 5      # number of clusters
 
 # Initialize and fit the Rcwk model
-model = Rcwk(n_clusters=k, init="s", random_state=42)
+model = Rcwk(n_clusters=k, init="chi2", random_state=42)
 model.fit(mat_tfidf)
 
 # Access results
 labels = model.labels_            # Cluster labels for each point
-weights = model.weights_           # Feature weights
-centers = model.cluster_centers_  # Coordinates of cluster centers
+weights = model.weights_          # Feature weights
 inertia = model.P2                # Sum of squared errors
 ```
 
-**Usage Summary:**
-
-- `fit(X)`: trains the clustering model on your data matrix `X`.
-- `.labels_`: provides cluster assignments after fitting.
-- `.cluster_centers_`: contains the centroids of the clusters.
-- `.inertia_`: evaluates compactness of clustering (lower is better).
-
-You can switch initialization methods with `init="r"` for random, `"s"` fror spherical k-means, or `"k"` for k-means++.python
+You can switch initialization methods with `init="r"` for random, `"chi2"` for chi-squared k-means, `"s"` for spherical k-means, `"k"` for k-means++.python
 
 ## Contributing
 
